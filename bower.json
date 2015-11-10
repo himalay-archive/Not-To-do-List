@@ -1,0 +1,22 @@
+{
+  "name": "shoping-list",
+  "version": "1.0.0",
+  "authors": [
+    "Himalay <contact@himalay.com.np>"
+  ],
+  "description": "Full-stack app with react and express",
+  "main": "index.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "material-design-lite": "~1.0.6",
+    "react": "~0.14.2"
+  }
+}

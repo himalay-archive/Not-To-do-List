@@ -1,0 +1,33 @@
+body {
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+}
+.fixed-header{
+        position: fixed;
+            top: 0;
+                width: 100vw;
+            }
+.strikethrough{
+    text-decoration: line-through;
+}
+
+.habit-list{
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 100%;
+    width: calc(100vw + 15px);
+    margin: 56px 0 83px 0;
+    padding: 0;
+}
+.habit-list .habit{
+    padding: 0 16px 0 72px;
+    list-style: none;
+}
+.add-new {
+    position: fixed;
+    bottom: 0;
+}
+.add-new .mdl-textfield{
+    width: calc(100% - 32px);
+}
