@@ -44,7 +44,17 @@ function NotToDoHabitStore(){
     }
 
     function addNotToDoHabit(habit){
+      var index = findHabitIndex(habit);
+      if(index < 0){
         habits.unshift(habit);
+      }else{
+        habits.splice(0, 0, habits.splice(index, 1)[0]);
+      }
+      triggerListeners();
+    }
+
+    function deleteNotToDoHabit(habit){
+        habits.splice(findHabitIndex(habit),1);
         triggerListeners();
     }
 
@@ -57,6 +67,16 @@ function NotToDoHabitStore(){
             listener(habits);
         });
     }
+
+    function setHabitDone(habit, isDone){
+      habits[findHabitIndex(habit)].done = isDone || false;
+      triggerListeners();
+    }
+
+    function findHabitIndex(habit){
+        return habits.map(function(x) {return x.name.toLowerCase(); }).indexOf(habit.name.toLowerCase());
+    }
+
     dispatcher.register(function(event){
         var split = event.type.split(':');
         if(split[0]=='not-to-do-habit'){
@@ -64,7 +84,15 @@ function NotToDoHabitStore(){
                 case 'add':
                     addNotToDoHabit(event.payload);
                     break;
-
+                case 'delete':
+                    deleteNotToDoHabit(event.payload);
+                    break;
+                case 'done':
+                    setHabitDone(event.payload, false);
+                    break;
+                case 'not-done':
+                    setHabitDone(event.payload, true);
+                    break;
             }
         }
     });

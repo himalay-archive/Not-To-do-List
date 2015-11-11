@@ -20,14 +20,24 @@ body {
     margin: 56px 0 83px 0;
     padding: 0;
 }
-.habit-list .habit{
-    padding: 0 16px 0 72px;
+.habit-list li {
     list-style: none;
+    margin: 10px 0;
 }
 .add-new {
     position: fixed;
     bottom: 0;
+    background-color: #FFF;
 }
 .add-new .mdl-textfield{
     width: calc(100% - 32px);
+}
+.inline{
+    display: inline;
+    margin-left: 20px;
+}
+
+.pull-right{
+  float: right;
+  margin-right: 20px;
 }

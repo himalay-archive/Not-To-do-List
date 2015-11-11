@@ -1,15 +1,15 @@
 {
-  "name": "shoping-list",
+  "name": "Not To-do List",
   "version": "1.0.0",
   "description": "Full-stack app with react and express",
-  "main": "index.js",
+  "main": "/server/main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Himalay",
+  "author": "Himalay <contact@himalay.com.np>",
   "license": "ISC",
   "dependencies": {
-    "browser-sync": "^2.9.12",
+    "browser-sync": "^2.10.0",
     "browserify": "^12.0.1",
     "ejs": "^2.3.4",
     "express": "^4.13.3",
