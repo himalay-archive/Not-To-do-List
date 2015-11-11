@@ -1,43 +1,15 @@
 var dispatcher = require('./../dispatcher.js');
+var api = require('./../helpers/RestHelper.js');
 
 function NotToDoHabitStore(){
-    var habits = [
-      {
-        _id: 1,
-        name: 'Swearing',
-      }, {
-        _id: 2,
-        name: 'Smoke',
-        done: true,
-      }, {
-        _id: 3,
-        name: 'TV',
-      }, {
-        _id: 4,
-        name: 'Fast Food',
-        done: true,
-      }, {
-        _id: 5,
-        name: 'Video Games',
-      },{
-        _id: 6,
-        name: 'Movies',
-      },{
-        _id: 7,
-        name: 'Refined Sugar',
-      },{
-        _id: 8,
-        name: 'Facebook',
-      },{
-        _id: 9,
-        name: 'Snap-chat',
-      },{
-        _id: 10,
-        name: 'Youtube',
-      },
-
-    ];
+    var habits = [];
     var listeners = [];
+
+    api.get('api/habits')
+      .then(function(data){
+        habits = data;
+        triggerListeners();
+      });
 
     function getHabits(){
         return habits;
@@ -47,6 +19,7 @@ function NotToDoHabitStore(){
       var index = findHabitIndex(habit);
       if(index < 0){
         habits.unshift(habit);
+        api.post('api/habits', habit);
       }else{
         habits.splice(0, 0, habits.splice(index, 1)[0]);
       }
