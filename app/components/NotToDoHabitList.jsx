@@ -18,7 +18,7 @@ module.exports = React.createClass({
         .map(function(habit, index) {
           return (
             <NotToDoHabit habit={habit} key={'habit' + index}/>
-          )
+          );
         })
     } </ul>
         <NotToDoAddHabit/>
