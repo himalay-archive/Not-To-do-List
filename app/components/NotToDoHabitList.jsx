@@ -8,7 +8,8 @@ module.exports = React.createClass({
       <div className="container">
       <div className="fixed-header mdl-layout--fixed-header">
       <header className="mdl-layout__header">
-        <div className="mdl-layout__header-row">
+        <div className="header-row">
+        <img src="android-chrome-48x48.png"/>
           <span className="mdl-layout-title">Not To-do List</span>
         </div>
       </header>

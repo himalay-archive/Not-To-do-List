@@ -5,9 +5,13 @@ var browserify = require('browserify');
 var reactify = require('reactify');
 var source = require('vinyl-source-stream');
 
-gulp.task('live-server', function() {
-  var server = new LiveServer('server/main.js');
-  server.start();
+gulp.task('copy', function() {
+  gulp.src([
+    'app/*.css',
+   'components/material-design-lite/material.min.css',
+   'components/material-design-lite/material.min.js',
+   'app/favicons/*.*',
+ ]).pipe(gulp.dest('./dist'));
 });
 
 gulp.task('bundle', ['copy'], function() {
@@ -21,9 +25,9 @@ gulp.task('bundle', ['copy'], function() {
     .pipe(gulp.dest('./dist'));
 });
 
-gulp.task('copy', function() {
-  gulp.src(['app/*.css', 'components/material-design-lite/material.min.css','components/material-design-lite/material.min.js'])
-    .pipe(gulp.dest('./dist'));
+gulp.task('live-server', function() {
+  var server = new LiveServer('server/main.js');
+  server.start();
 });
 
 gulp.task('serve', ['bundle', 'live-server'], function() {
