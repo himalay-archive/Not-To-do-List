@@ -15,7 +15,7 @@ body {
 .habit-list {
   overflow-y: scroll;
   overflow-x: hidden;
-  height: 100%;
+  height: calc(100vh - 108px);
   width: calc(100vw + 15px);
   margin-top: 108px;
   padding: 0;

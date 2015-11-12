@@ -28,11 +28,14 @@ module.exports = function(app) {
     .patch(function(req, res) {
       NotToDoHabitModel.findOne({_id: req.body._id}, function(err, habit) {
         if (err) throw err;
-        for (var key in req.body) {
-          habit[key] = req.body[key];
+        if (habit) {
+          for (var key in req.body) {
+            habit[key] = req.body[key];
+          }
+
+          habit.save();
         }
 
-        habit.save();
         res.status(200).send();
       });
     });

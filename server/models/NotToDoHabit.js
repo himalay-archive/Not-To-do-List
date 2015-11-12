@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var NotToDoHabitSchema = {
   name: String,
   done: {type: Boolean, default: false},
-  id: String,
+  _id: String,
   timestamp: { type: Date, default: Date.now },
 };
 

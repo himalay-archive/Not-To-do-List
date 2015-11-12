@@ -4,11 +4,11 @@ var NotToDoItemList = require('./components/NotToDoHabitList.jsx');
 var NotToDoHabitStore = require('./stores/NotToDoHabitStore.jsx');
 var initial = NotToDoHabitStore.getHabits();
 
-function render(){
+function render() {
   ReactDOM.render(<NotToDoItemList habits={initial} />, app);
 }
 
-NotToDoHabitStore.onChange(function(habits){
+NotToDoHabitStore.onChange(function(habits) {
   initial = habits;
   render();
 });

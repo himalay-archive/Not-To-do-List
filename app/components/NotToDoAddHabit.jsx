@@ -1,4 +1,5 @@
 var React = require('react');
+var guid = require('guid');
 var action = require('./../actions/NotToDoHabitActionCreator.jsx');
 
 module.exports = React.createClass({
@@ -12,8 +13,15 @@ module.exports = React.createClass({
 
   addHabit: function(e) {
     e.preventDefault();
+    console.log({
+      name: this.state.input,
+      _id: guid.raw(),
+    });
     if (this.state.input) {
-      action.add({name: this.state.input});
+      action.add({
+        name: this.state.input,
+        _id: guid.raw(),
+      });
       this.setState({input: ''});
     }
   },

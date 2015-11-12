@@ -6,9 +6,17 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:himalay/Not-To-do-List.git"
+  },
   "author": "Himalay <contact@himalay.com.np>",
   "license": "ISC",
   "dependencies": {
+    "babel": "^6.1.5",
+    "babel-core": "^6.1.4",
+    "babel-preset-es2015": "^6.1.4",
+    "babel-preset-react": "^6.1.4",
     "body-parser": "^1.14.1",
     "browser-sync": "^2.10.0",
     "browserify": "^12.0.1",
