@@ -1,43 +1,58 @@
 body {
-    overflow: hidden;
-    padding: 0;
-    margin: 0;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
 }
-.fixed-header{
-        position: fixed;
-            top: 0;
-                width: 100vw;
-            }
-.strikethrough{
-    text-decoration: line-through;
+.fixed-header {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 3;
 }
-
-.habit-list{
-    overflow-y: scroll;
-    overflow-x: hidden;
-    height: 100%;
-    width: calc(100vw + 15px);
-    margin: 56px 0 83px 0;
-    padding: 0;
+.strikethrough {
+  text-decoration: line-through;
+}
+.habit-list {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 100%;
+  width: calc(100vw + 15px);
+  margin-top: 108px;
+  padding: 0;
 }
 .habit-list li {
-    list-style: none;
-    margin: 10px 0;
+  list-style: none;
+  margin: 10px 0;
+}
+.habit-list h4 {
+  position: relative;
+  top: 5px;
 }
 .add-new {
-    position: fixed;
-    bottom: 0;
-    background-color: #FFF;
+  position: fixed;
+  top: 48px;
+  padding: 0 20px;
+  font-size: 16px;
+  width: 100%;
+  background-color: #FFF;
+  background-color: rgba(255, 255, 255, 0.92);
+  box-sizing: border-box;
+  z-index: 2;
 }
-.add-new .mdl-textfield{
-    width: calc(100% - 32px);
+.add-new input, .add-new button {
+  font-size: 20px;
+  font-weight: 400;
 }
-.inline{
-    display: inline;
-    margin-left: 20px;
+.add-new .mdl-textfield {
+  width: calc(100% - 32px);
 }
-
-.pull-right{
+.inline {
+  display: inline;
+  margin-left: 20px;
+}
+.pull-right {
   float: right;
   margin-right: 20px;
+  position: relative;
+  top: 5px;
 }

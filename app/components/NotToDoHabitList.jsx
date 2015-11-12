@@ -1,9 +1,10 @@
 var React = require('react');
 var NotToDoHabit = require('./NotToDoHabit.jsx');
 var NotToDoAddHabit = require('./NotToDoAddHabit.jsx');
+
 module.exports = React.createClass({
   render: function() {
-    return (
+    return (/*jscs:disable validateQuoteMarks*/
       <div className="container">
       <div className="fixed-header mdl-layout--fixed-header">
       <header className="mdl-layout__header">
@@ -11,7 +12,9 @@ module.exports = React.createClass({
           <span className="mdl-layout-title">Not To-do List</span>
         </div>
       </header>
-    </div> <ul className="habit-list"> {
+    </div>
+        <NotToDoAddHabit/>
+        <ul className="habit-list"> {
       this
         .props
         .habits
@@ -21,8 +24,7 @@ module.exports = React.createClass({
           );
         })
     } </ul>
-        <NotToDoAddHabit/>
           </div>
-        );
-      }
-    });
+        /*jscs:enable validateQuoteMarks*/);
+  },
+});
